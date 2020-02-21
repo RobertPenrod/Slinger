@@ -1,0 +1,2 @@
+# Slinger
+A game project
