@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: c335d951fccd0604daf7236f2570adb0
+  - enabled: 1
+    path: Assets/Scenes/Old Level Select.unity
+    guid: fa749c47e8148df46b65709cb5ed78dc
+  - enabled: 1
+    path: Assets/Scenes/Levels/Levels/Intro.unity
+    guid: e67f78a49f46c7b47912b2e450399cfd
+  - enabled: 1
+    path: Assets/Scenes/Levels/Levels/Level 2.unity
+    guid: 72b32d4e01948e146801f2600096e571
+  - enabled: 1
+    path: Assets/Scenes/Levels/Levels/test 1 level 3.unity
+    guid: a9e676bd820eb17498aac73f6fc3b49e
+  - enabled: 1
+    path: Assets/Scenes/Levels/Levels/test 1 level 4.unity
+    guid: 9a45ce0566c0460469cc38ea0bdd4521
+  - enabled: 1
+    path: Assets/Scenes/Levels/Levels/test 1 level 5.unity
+    guid: 41dff92181526cf40a1cf147aecd7caf
+  - enabled: 1
+    path: Assets/Scenes/Levels/Levels/test 1 level 6.unity
+    guid: 73129143e85805a42babad166edb776e
+  - enabled: 1
+    path: Assets/Scenes/Levels/Levels/test 1 level 7.unity
+    guid: 8cc4d23cee2dce14e9b5b236bb21e55d
+  - enabled: 1
+    path: Assets/Scenes/Levels/Levels/test 1 level 8.unity
+    guid: 9173667cf9e1fbe47ad09a24f40f4ebd
+  - enabled: 1
+    path: Assets/Scenes/Levels/Levels/test 1 level 9.unity
+    guid: ce138711611f4374d9d7235e1da8bc98
+  - enabled: 1
+    path: Assets/Scenes/Levels/Levels/test 1 level 10.unity
+    guid: 0ee93c4ee992da84482b3577da8dea55
+  - enabled: 1
+    path: Assets/Scenes/Testing/Test Hub.unity
+    guid: 29b103309b6edae4caf0bcd0f22c4296
+  - enabled: 1
+    path: Assets/Scenes/Testing/Mechanics Testing 1.unity
+    guid: 01743b90659ef6144b54006ec002569a
+  - enabled: 1
+    path: Assets/Scenes/Levels/New Levels/Stall.unity
+    guid: afa5cd57246dfc1468b42c563ff98135
+  - enabled: 1
+    path: Assets/Scenes/Levels/New Levels/[Test Level Hub].unity
+    guid: 7328f2a0079678f4b8a91268f68cd610
+  - enabled: 1
+    path: Assets/Scenes/Levels/New Levels/Shell.unity
+    guid: db85b69167a815b44a4d46a429456344
+  - enabled: 1
+    path: Assets/Scenes/Levels/New Levels/Cell.unity
+    guid: 3ae8bc7c483665d4f879a075ac093f25
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Levels/New Levels/Collectable Levels/Gallery.unity
+    guid: 26f13876260c47c47abe7b6898ae9942
+  - enabled: 1
+    path: Assets/Scenes/Levels/New Levels/Collectable Levels/Eye.unity
+    guid: 16fcbc8a7417d9b42857f76b10a7304a
+  - enabled: 1
+    path: Assets/Scenes/Levels/New Levels/Collectable Levels/Reactor.unity
+    guid: 3bbc3b6997a741049a10923969d4e6ee
+  - enabled: 1
+    path: Assets/Scenes/Levels/New Levels/Collectable Levels/Plug.unity
+    guid: fc09a194628881c449c94eb1a411947d
+  - enabled: 1
+    path: Assets/Scenes/Levels/New Levels/Collectable Levels/Deviation.unity
+    guid: 3c88c539de1074a47acf357dd99d0f57
+  - enabled: 1
+    path: Assets/Scenes/Levels/New Levels/Collectable Levels/Door.unity
+    guid: 5be0287f9a7971a41b46e03859a25225
+  - enabled: 1
+    path: Assets/Scenes/Levels/New Levels/Collectable Levels/Boxes.unity
+    guid: 67e52fdc4fd0c064a9a8cc2328fe390b
+  - enabled: 1
+    path: Assets/Scenes/Levels/New Levels/Collectable Levels/Pieces.unity
+    guid: a858b0d71044d2f44ad6543573bd8609
+  - enabled: 1
+    path: Assets/Scenes/Levels/New Levels/Collectable Levels/Hour Glass.unity
+    guid: 10f98d68d8e473c43a94aee03489f37a
+  - enabled: 1
+    path: Assets/Scenes/Levels/New Levels/Collectable Levels/Bounce.unity
+    guid: 2ab0b4d2faf167d4e85fadcff4768306
+  - enabled: 1
+    path: Assets/Scenes/Levels/New Levels/Collectable Levels/Collectable Intro.unity
+    guid: de0f4439dd0acaa4a89b816f65e0e98f
+  - enabled: 1
+    path: Assets/Scenes/Level Select.unity
+    guid: 52e7ed6817b5aae45b30c0d23053e4bf
+  - enabled: 1
+    path: Assets/Scenes/Levels/Gap Levels/Placed/Level 4.5.unity
+    guid: 682b7bb49fcdba347aa12c5f305ce01a
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Levels/Gap Levels/Placed/Physics Wheel Tunnel.unity
+    guid: c7f6ede5554428a4187cf72da90142b3
+  - enabled: 1
+    path: Assets/Scenes/Levels/Gap Levels/Placed/Tight Twitch.unity
+    guid: 794d7a6bba4a4cf4ebc4ef73da105d4c
+  - enabled: 1
+    path: Assets/Scenes/Levels/Gap Levels/Placed/Architecture Resource.unity
+    guid: e6c078dc05d1791439aa34416cc5e8c5
+  - enabled: 1
+    path: Assets/Scenes/Levels/Gap Levels/Placed/Brave Sheep.unity
+    guid: 67901c7b637b4954d9238e3aacc5e1ef
+  - enabled: 1
+    path: Assets/Scenes/Levels/Gap Levels/Placed/Precision Center.unity
+    guid: 50e65579f0c997042849d800fe7c2ed5
+  - enabled: 1
+    path: Assets/Scenes/Levels/Gap Levels/Placed/Detector Agreement.unity
+    guid: edd32e8c2b7207b4b8db270756acd25b
+  m_configObjects: {}
