@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public bool isMenuOpen;
     public GameObject endOfLevelMenu;
     public AudioSource winLevelAudio;
+    public AudioSource loseLevelAudio;
     public GameObject AFIE;
     public GameObject slingEnergyUIObject;
     public StarAnimationHandler starAnimationHandler;
@@ -57,6 +58,8 @@ public class GameManager : MonoBehaviour
                 if (MusicManager.Instance != null)
                     MusicManager.Instance.Mute();
             }
+
+            loseLevelAudio.Play();
 
             // Play death sound
             if (playDeathSound)

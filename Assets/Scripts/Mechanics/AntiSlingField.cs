@@ -9,6 +9,12 @@ public class AntiSlingField : MonoBehaviour
     void Start()
     {
         GetComponent<Collider2D>().isTrigger = true;
+
+        // Set order in layer
+        if(GetComponent<MeshRenderer>() != null)
+        {
+            GetComponent<MeshRenderer>().sortingOrder = -3;
+        }
     }
 
     // Update is called once per frame

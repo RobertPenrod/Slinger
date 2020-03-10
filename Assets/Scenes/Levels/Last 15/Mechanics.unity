@@ -852,7 +852,7 @@ PrefabInstance:
     - target: {fileID: 1198339880404706765, guid: cec14c4c8cf44e14faf8380f504b3bdf,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1943403041550835967, guid: cec14c4c8cf44e14faf8380f504b3bdf,
         type: 3}
@@ -1581,7 +1581,13 @@ Transform:
   m_Father: {fileID: 52869599}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &994420222
+--- !u!224 &1317389346 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4399127753338874959, guid: cec14c4c8cf44e14faf8380f504b3bdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 537224714}
+  m_PrefabAsset: {fileID: 0}
+--- !u!43 &1318977398
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1744,12 +1750,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!224 &1317389346 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4399127753338874959, guid: cec14c4c8cf44e14faf8380f504b3bdf,
-    type: 3}
-  m_PrefabInstance: {fileID: 537224714}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1347806396
 GameObject:
   m_ObjectHideFlags: 0
@@ -2030,7 +2030,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 994420222}
+      objectReference: {fileID: 1318977398}
     - target: {fileID: 6194606307811701301, guid: 183e16997ebf98649a638589afff53d7,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
