@@ -10,6 +10,7 @@ public class Level : MonoBehaviour
     public int number;  // set by external script.
     public Transform starPanel;
     public GameObject buttonObject;
+    public GameObject lockImage;
 
     // Variables Loaded and Saved by SaveSystem
     public int starCount = 0;   // (0-3)
@@ -57,6 +58,11 @@ public class Level : MonoBehaviour
         {
             Lock();
         }
+        else
+        // Unlock Level
+        {
+            lockImage.SetActive(false);
+        }
     }
 
     private void loadData(LevelData data)
@@ -70,6 +76,7 @@ public class Level : MonoBehaviour
     {
         locked = true;
         buttonObject.GetComponent<Button>().interactable = false;
+        lockImage.SetActive(true);
     }
 
     public void Unlock()
@@ -78,6 +85,7 @@ public class Level : MonoBehaviour
         buttonObject.GetComponent<Button>().interactable = true;
         // Unlock level in save system
         SaveSystem.UnlockLevel(name);
+        lockImage.SetActive(false);
     }
 
     private void UpdateStarCount()

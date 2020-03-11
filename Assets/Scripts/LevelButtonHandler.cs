@@ -47,30 +47,6 @@ public class LevelButtonHandler : MonoBehaviour
             levelButtons[i] = levelHolder.transform.GetChild(i);
         }
 
-        /*
-        // Load levelButtons into their correct locations.
-        int buttonIndex = 0;
-        int buttonsPerRow = 5;
-        int rowsPerPanel = 3;
-        for (int panel = 0; panel < transform.childCount; panel++)
-        {
-            Transform panelTransform = transform.GetChild(panel);
-            for (int row = 0; row < panelTransform.childCount; row++)
-            {
-                Transform rowTransform = panelTransform.GetChild(row);
-                for (int b = 0; b < buttonsPerRow; b++)
-                {
-                    if (buttonIndex < levelButtons.Length)
-                    {
-                        levelButtons[buttonIndex].transform.SetParent(rowTransform);
-                        buttonIndex++;
-                    }
-                    else break;
-                }
-            }
-        }
-        */
-
         int buttonsPerRow = 5;
         int rowsPerPanel = 3;
 

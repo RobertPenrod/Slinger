@@ -209,8 +209,9 @@ GameObject:
   - component: {fileID: 478609235182073045}
   - component: {fileID: 478609235182073040}
   - component: {fileID: 478609235182073047}
-  - component: {fileID: 478609235182073046}
   - component: {fileID: 8753449681615277062}
+  - component: {fileID: 2591501905243643105}
+  - component: {fileID: 2801132568404783134}
   m_Layer: 5
   m_Name: Level Panel (1)
   m_TagString: Untagged
@@ -276,7 +277,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &478609235182073046
+--- !u!114 &8753449681615277062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478609235182073044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &2591501905243643105
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -301,7 +317,7 @@ MonoBehaviour:
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
---- !u!114 &8753449681615277062
+--- !u!114 &2801132568404783134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -310,12 +326,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 478609235182073044}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Script: {fileID: 11500000, guid: 944f5dd2080dbe84b865e60f7c56604d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 5, y: -5}
-  m_UseGraphicAlpha: 1
 --- !u!1 &478609235578218596
 GameObject:
   m_ObjectHideFlags: 0
