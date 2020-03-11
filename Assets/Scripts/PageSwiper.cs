@@ -35,14 +35,14 @@ public class PageSwiper : MonoBehaviour, IDragHandler, IEndDragHandler
         //
         if(PlayerPrefs.HasKey("savedPanelNumber"))
         {
-            Debug.Log("Setting Panel to Panel #" + PlayerPrefs.GetInt("savedPanelNumber"));
+            //Debug.Log("Setting Panel to Panel #" + PlayerPrefs.GetInt("savedPanelNumber"));
             setCurrentPanel(PlayerPrefs.GetInt("savedPanelNumber"));
         }
     }
 
     public void savePanelNumber(int panelNumber)
     {
-        Debug.Log("Sacing panel #" + panelNumber);
+        //Debug.Log("Sacing panel #" + panelNumber);
         PlayerPrefs.SetInt("savedPanelNumber", panelNumber);
     }
 

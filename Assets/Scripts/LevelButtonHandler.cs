@@ -10,6 +10,7 @@ public class LevelButtonHandler : MonoBehaviour
 {
     public GameObject levelHolder;
     public GameObject levelPanelPrefab;
+    public int starsCollected;
 
     private void Start()
     {
@@ -33,6 +34,16 @@ public class LevelButtonHandler : MonoBehaviour
         PlayerPrefs.SetString("LevelNames", levelNames);
 
         GetComponent<PageSwiper>().init();
+
+        SetPanelStarRequirements();
+    }
+
+    private void SetPanelStarRequirements()
+    {
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).GetComponent<LevelPanel>().starsNeeded = i * 15 * 3 - 5;  // You are allowed to lose five stars and still unlock the next level.
+        }
     }
 
     private void LoadLevelsIntoPanels()
@@ -49,7 +60,6 @@ public class LevelButtonHandler : MonoBehaviour
 
         int buttonsPerRow = 5;
         int rowsPerPanel = 3;
-
         for (int buttonIndex = 0; buttonIndex < levelCount; buttonIndex++)
         {
             // Calculate buttons position
@@ -71,18 +81,26 @@ public class LevelButtonHandler : MonoBehaviour
 
             // Move button to position
             Transform panelTransform = this.transform.GetChild(panelIndex);
-            Transform rowTransform = panelTransform.GetChild(rowIndex);
+            Transform rowTransform = panelTransform.GetComponent<LevelPanel>().rowHolder.GetChild(rowIndex);
             levelButtons[buttonIndex].transform.SetParent(rowTransform);
             // Set scale of button
             levelButtons[buttonIndex].GetComponent<RectTransform>().localScale = new Vector2(1, 1);
         }
     }
 
+    public bool gottenStarsCollected = false;
+
     private void Update()
     {
         // Disable this call in the final version,
         // this should only be called on start then.
         numberLevels();
+
+        if(!gottenStarsCollected)
+        {
+            gottenStarsCollected = true;
+            starsCollected = GetStarCount();
+        }
     }
 
     public List<GameObject> GetLevelButtons()
@@ -92,9 +110,9 @@ public class LevelButtonHandler : MonoBehaviour
         for (int panel = 0; panel < transform.childCount; panel++)
         {
             Transform panelTransform = transform.GetChild(panel);
-            for (int row = 0; row < panelTransform.childCount; row++)
+            for (int row = 0; row < panelTransform.GetComponent<LevelPanel>().rowHolder.childCount; row++)
             {
-                Transform rowTransform = panelTransform.GetChild(row);
+                Transform rowTransform = panelTransform.GetComponent<LevelPanel>().rowHolder.GetChild(row);
                 for (int button = 0; button < rowTransform.childCount; button++)
                 {
                     buttonList.Add(rowTransform.GetChild(button).gameObject);
@@ -126,5 +144,17 @@ public class LevelButtonHandler : MonoBehaviour
                 buttons[i].GetComponent<Level>().Lock();
             }
         }
+    }
+
+    private int GetStarCount()
+    {
+        int totalStars = 0;
+        List <GameObject> levelButtons = GetLevelButtons();
+        for(int i = 0; i < levelButtons.Count; i++)
+        {
+            totalStars += levelButtons[i].GetComponent<Level>().starCount;
+            Debug.Log("[" + i + "] " + levelButtons[i].GetComponent<Level>().starCount);
+        }
+        return totalStars;
     }
 }
