@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
     public GameObject slingEnergyUIObject;
     public StarAnimationHandler starAnimationHandler;
     public AudioSource deathSoundMusic;
+    public GameObject starsCollectedPanel;
+
+    public int starsEarned = 0;
+    public int newStarsEarned = 0;
 
     public static GameManager Instance { get; private set; }
 
@@ -87,7 +91,7 @@ public class GameManager : MonoBehaviour
         int previousStarsEarned = SaveSystem.LoadLevelStars(currentLevelName);
 
         // Determined Stars Earned
-        int starsEarned = 0;
+        starsEarned = 0;
         int slingEnergyLeft = AFIE.GetComponent<SlingMovementHandler>().slingEnergy;
         if(slingEnergyLeft >= 2)
         {
@@ -101,10 +105,16 @@ public class GameManager : MonoBehaviour
         {
             starsEarned = 1;
         }
-        
-        
+
+        newStarsEarned = 0; // The # of unique stars earned this level.
         if (starsEarned > previousStarsEarned)
-            SaveSystem.SaveLevelStars(currentLevelName, starsEarned);
+        {
+            newStarsEarned = starsEarned - previousStarsEarned;
+            SaveSystem.SaveLevelStars(currentLevelName, starsEarned);   // Save new stars that have been earned.
+        }
+
+        // Add new stars earned to the amount of collected stars.
+        PlayerPrefs.SetInt("StarsCollected", PlayerPrefs.GetInt("StarsCollected") + newStarsEarned);
 
         // Unlock Next Level
         SaveSystem.UnlockLevel(nextLevelName);
@@ -121,6 +131,9 @@ public class GameManager : MonoBehaviour
         endOfLevelMenu.SetActive(true);
         endOfLevelMenu.GetComponent<Animator>().SetBool("Level Won", true);
         menuOpened();
+
+        // Display starsCollectedPanel
+        //starsCollectedPanel.GetComponent<StarsCollectedPanel>().Show();
 
         // Wait for end of level menu to display
         while(!endOfLevelMenu.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Displaying"))

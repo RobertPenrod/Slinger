@@ -6,6 +6,7 @@ public class StarAnimationHandler : MonoBehaviour
 {
     public AudioClip StarEarnedSound;
     public AudioClip StarUnearnedSound;
+    public StarsCollectedPanel starsCollectedPanel;
     private Animator[] starAnimators;
     private AudioSource[] starAudios;
 
@@ -30,12 +31,19 @@ public class StarAnimationHandler : MonoBehaviour
     // Uses the star animators to animate the number of stars earned on a level.
     {
         isAudioDone = false;
+        int starsEarned = GameManager.Instance.starsEarned;
+        int newStarsEarned = GameManager.Instance.newStarsEarned;
         for (int starIndex = 0; starIndex < 3; starIndex++)
         {
             // Start Animation.
             bool earned = starIndex < numStarsEarned;
             starAnimators[starIndex].SetBool("Earned", earned);
             starAnimators[starIndex].SetTrigger("Show");
+
+            // Animate stars collected panel
+            Debug.Log("New stars earned: " + newStarsEarned);
+            if (starIndex >= starsEarned - newStarsEarned && earned)
+                starsCollectedPanel.AddStar();
 
             // Play Star Sound
             if (earned)

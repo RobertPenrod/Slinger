@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EndOfLevelMenu : MonoBehaviour
 {
+    public StarsCollectedPanel starsCollectedPanel;
+
     public void LevelSelect()
     {
         SceneFader.Instance.FadeTo("Level Select");
@@ -17,5 +19,10 @@ public class EndOfLevelMenu : MonoBehaviour
     public void NextLevel()
     {
         SceneFader.Instance.FadeToNextLevel();
+    }
+
+    public void ShowStarsCollectedPanel()
+    {
+        starsCollectedPanel.Show();
     }
 }

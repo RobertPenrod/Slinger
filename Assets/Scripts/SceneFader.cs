@@ -124,10 +124,36 @@ public class SceneFader : MonoBehaviour
     
     public void FadeToNextLevel()
     {
-        // adjust current level
+        // Get current level
+        //
         int currentLevel = PlayerPrefs.GetInt("CurrentLevel");
-        PlayerPrefs.SetInt("CurrentLevel", currentLevel + 1);
-        FadeTo(currentLevelName());
+
+        // Must the player unlock the next panel for this level?
+        //
+        bool nextLevelIsOnNextPanel = currentLevel % 15 == 0;
+        int nextPanelNumber = currentLevel / 15;
+        int panelsUnlocked = PlayerPrefs.GetInt("PanelsUnlocked");
+
+        // The player must unlock the next panel.
+        // Change the scene to display this panel.
+        //
+        if (panelsUnlocked < nextPanelNumber)
+        {
+            // Make sure the panel that needs to be unlocked will be displayed.
+            //
+            PlayerPrefs.SetInt("savedPanelNumber", panelsUnlocked + 1);
+
+            // Fade to level select.
+            //
+            FadeTo("Level Select");
+        }
+        // Otherwise, move the plyer to the next level
+        //
+        else
+        {
+            PlayerPrefs.SetInt("CurrentLevel", currentLevel + 1);
+            FadeTo(currentLevelName());
+        }
     }
 
     private string currentLevelName()

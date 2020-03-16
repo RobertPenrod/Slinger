@@ -100,6 +100,7 @@ public class LevelButtonHandler : MonoBehaviour
         {
             gottenStarsCollected = true;
             starsCollected = GetStarCount();
+            PlayerPrefs.SetInt("StarsCollected", starsCollected);
         }
     }
 
@@ -153,7 +154,7 @@ public class LevelButtonHandler : MonoBehaviour
         for(int i = 0; i < levelButtons.Count; i++)
         {
             totalStars += levelButtons[i].GetComponent<Level>().starCount;
-            Debug.Log("[" + i + "] " + levelButtons[i].GetComponent<Level>().starCount);
+            //Debug.Log("[" + i + "] " + levelButtons[i].GetComponent<Level>().starCount);
         }
         return totalStars;
     }

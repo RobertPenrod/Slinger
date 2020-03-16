@@ -206,6 +206,7 @@ MonoBehaviour:
   starPanel: {fileID: 959493892786371812}
   buttonObject: {fileID: 1773521164509005369}
   lockImage: {fileID: 7758498014642319327}
+  lockedSound: {fileID: 0}
   starCount: 0
   locked: 1
 --- !u!1 &2490768157175414020
