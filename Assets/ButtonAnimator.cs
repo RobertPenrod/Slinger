@@ -12,19 +12,19 @@ public class ButtonAnimator : MonoBehaviour
 
     private void Start()
     {
-        initialPosition = GetComponent<RectTransform>().position;
+        initialPosition = new Vector3(0,0,0);
         initialEffectDistance = GetComponent<Shadow>().effectDistance;
     }
 
     public void DepressButton()
     {
-        GetComponent<RectTransform>().position = initialPosition + new Vector3(offsetAmount, -offsetAmount);
+        GetComponent<RectTransform>().localPosition = initialPosition + new Vector3(offsetAmount, -offsetAmount);
         GetComponent<Shadow>().effectDistance = new Vector2(0, 0);
     }
 
     public void RestoreButton()
     {
-        GetComponent<RectTransform>().position = initialPosition;
+        GetComponent<RectTransform>().localPosition = initialPosition;
         GetComponent<Shadow>().effectDistance = initialEffectDistance;
     }
 }

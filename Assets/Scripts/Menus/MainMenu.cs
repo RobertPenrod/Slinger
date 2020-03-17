@@ -16,6 +16,6 @@ public class MainMenu : MonoBehaviour
 
     public void CreditsPressed()
     {
-
+        SceneFader.Instance.FadeTo("Credits");
     }
 }

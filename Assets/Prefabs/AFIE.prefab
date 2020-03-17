@@ -306,6 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cancelRadius: 1.5
+  canSling: 0
 --- !u!114 &616242467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,6 +342,7 @@ MonoBehaviour:
   slingSound: {fileID: 3928647031733331627}
   trailRenderer: {fileID: 7140125452480303777}
   deathParticles: {fileID: 9119837003774474849}
+  inAntiSlingField: 0
 --- !u!114 &4470134220491847339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -741,6 +743,7 @@ MonoBehaviour:
   rigidBody: {fileID: 3047184419898496879}
   inputHandler: {fileID: 616242465}
   squeezeAmount: 0.35
+  minScale: 0.5
   maxSqueezeVelocity: 25
 --- !u!1 &3068782821375120134
 GameObject:

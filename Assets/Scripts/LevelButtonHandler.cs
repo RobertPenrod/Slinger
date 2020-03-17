@@ -10,6 +10,8 @@ public class LevelButtonHandler : MonoBehaviour
 {
     public GameObject levelHolder;
     public GameObject levelPanelPrefab;
+    public GameObject EndPanelPrefab;
+    public AudioSource buttonAudio;
     public int starsCollected;
 
     private void Start()
@@ -85,6 +87,13 @@ public class LevelButtonHandler : MonoBehaviour
             levelButtons[buttonIndex].transform.SetParent(rowTransform);
             // Set scale of button
             levelButtons[buttonIndex].GetComponent<RectTransform>().localScale = new Vector2(1, 1);
+        }
+
+        // Create End panel object
+        if (EndPanelPrefab != null)
+        {
+            GameObject endPanel = Instantiate(EndPanelPrefab, this.transform);
+            endPanel.GetComponent<SubmitReportButton>().audio = buttonAudio;
         }
     }
 

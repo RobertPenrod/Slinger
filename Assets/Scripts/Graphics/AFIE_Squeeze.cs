@@ -11,6 +11,7 @@ public class AFIE_Squeeze : MonoBehaviour
     public Rigidbody2D rigidBody;
     public SlingInputHandler inputHandler;
     public float squeezeAmount;
+    public float minScale;
     public float maxSqueezeVelocity;
 
     // Start is called before the first frame update
@@ -38,6 +39,7 @@ public class AFIE_Squeeze : MonoBehaviour
         {
             Vector2 velocity = rigidBody.velocity;
             float newScale = 1 - squeezeAmount * Mathf.Clamp(velocity.magnitude / maxSqueezeVelocity, 0, maxSqueezeVelocity);
+            newScale = Mathf.Clamp(newScale, minScale, 1);
             transform.localScale = new Vector3(1, newScale, 0);
             Vector2 dragDirection = inputHandler.getDragVector();
             float angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
