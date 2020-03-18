@@ -102,7 +102,8 @@ public class Collectable : MonoBehaviour
             animator.SetBool("Captured", true);
             pickupAudioSource.Play();
             // Play ambience after pickup
-            ambientAudioSource.PlayDelayed(pickupAudioSource.clip.length);
+            //ambientAudioSource.PlayDelayed(pickupAudioSource.clip.length);
+            ambientAudioSource.PlayDelayed(0.1f);
 
             // set color
             StartCoroutine("changeColor");
