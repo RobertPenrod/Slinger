@@ -17,7 +17,7 @@ public class SlingInputHandler : MonoBehaviour
     protected bool slung;
     [SerializeField]
     protected float cancelRadius;
-    protected float maxDragRadius; // maximum radius of pull, = to 1/2 length of smallest screen size
+    protected float maxDragRadius; // maximum radius of pull, = to 1/4 length of smallest screen size
 
     public bool canSling; // controlled by movement handler
 
@@ -28,7 +28,7 @@ public class SlingInputHandler : MonoBehaviour
         initialPressPosition = new Vector2(0, 0);
         float height = Camera.main.orthographicSize * 2.0f;
         float width = height * Screen.width / Screen.height;
-        maxDragRadius = Mathf.Min(width, height) * 0.5f;
+        maxDragRadius = Mathf.Min(width, height) * 0.3f;
         canSling = true;
     }
 

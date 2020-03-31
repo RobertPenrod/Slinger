@@ -31,12 +31,12 @@ public class AfieResetInputHandler : MonoBehaviour
             {
                 trackingDoublePress = true;
                 timer = 0;
-                initialPressLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                initialPressLocation = Input.mousePosition; // Camera.main.ScreenToWorldPoint(Input.mousePosition);
             }
             else // double press has happened
             {
                 // check if new press is within doublePressRadius of initial press
-                Vector2 currentPressLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector2 currentPressLocation = Input.mousePosition; // Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 float distance = Vector2.Distance(currentPressLocation, initialPressLocation);
                 if (distance <= doublePressRadius)
                 {

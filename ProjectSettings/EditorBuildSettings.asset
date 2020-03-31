@@ -161,4 +161,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: c9eed5d2842cf8a498f697a139626954
+  - enabled: 1
+    path: Assets/Scenes/Levels/Last 15/Placed/Combination.unity
+    guid: d3e2e695912f58d4785bc8cd18760939
+  - enabled: 1
+    path: Assets/Scenes/Levels/Last 15/Placed/Spinning Walls Intro.unity
+    guid: 72f5f72a9bb5650448855d736d8f7222
+  - enabled: 1
+    path: Assets/Scenes/Levels/Last 15/Placed/Wheel Rooms.unity
+    guid: 2efe6cc1c55b7684a8508c60b266cd27
+  - enabled: 1
+    path: Assets/Scenes/Levels/Last 15/Placed/Root Engagement.unity
+    guid: a097b971cc31b784597aef7eb315d666
+  - enabled: 1
+    path: Assets/Scenes/Levels/Last 15/Placed/Final Frontier.unity
+    guid: 5e0af921a24342849a5fbfbe69947784
   m_configObjects: {}

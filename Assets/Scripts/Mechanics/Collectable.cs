@@ -17,6 +17,8 @@ public class Collectable : MonoBehaviour
     private Rigidbody2D rigidBody;
     private Animator animator;
 
+    private float defaultVolume;
+
     // Remove this update method in final version.
     private void Update()
     {
@@ -29,6 +31,7 @@ public class Collectable : MonoBehaviour
         collected = false;
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        defaultVolume = ambientAudioSource.volume;
     }
 
     private void FixedUpdate()
@@ -107,6 +110,31 @@ public class Collectable : MonoBehaviour
 
             // set color
             StartCoroutine("changeColor");
+
+            // Make sure the volumes do not get overwhelming.
+            AdjustVolumes();
+
+            // Check to see if this is connected to a moving object via  a joint componenet
+            if(GetComponent<Joint2D>() != null)
+            {
+                // If so, disable that joing so the collectable will follow the player rather than the object.
+                GetComponent<Joint2D>().enabled = false;
+            }
+        }
+    }
+
+    private void AdjustVolumes()
+    {
+        GameObject[] collectables = GameObject.FindGameObjectsWithTag("Collectable");
+        int collectedCount = 0;
+        for(int i = 0; i < collectables.Length; i++)
+        {
+            if (collectables[i].GetComponent<Collectable>().collected)
+                collectedCount++;
+        }
+        for(int i = 0; i < collectables.Length; i++)
+        {
+            collectables[i].GetComponent<Collectable>().ambientAudioSource.volume = defaultVolume / (float)collectedCount;
         }
     }
 
